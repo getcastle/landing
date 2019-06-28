@@ -5,7 +5,8 @@ const indexRouter = (config) => {
 
   /* GET home page. */
   router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Express' });
+    const templateVariables = config.index || {};
+    res.render('index', templateVariables);
   });
 
   return router;
